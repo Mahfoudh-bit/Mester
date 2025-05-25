@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>تحدي وسؤال</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div id="login-screen" class="screen active">
+      <h2>أدخل كلمة المرور للعب</h2>
+      <input type="password" id="password" placeholder="كلمة المرور" />
+      <button onclick="checkPassword()">دخول</button>
+      <p id="login-error" class="error"></p>
+    </div>
+
+    <div id="players-screen" class="screen">
+      <h2>أدخل أسماء اللاعبين (2 إلى 10 لاعبين)</h2>
+      <div id="players-inputs"></div>
+      <button onclick="addPlayer()">إضافة لاعب</button>
+      <button onclick="startGame()">ابدأ اللعبة</button>
+      <p id="players-error" class="error"></p>
+    </div>
+
+    <div id="game-screen" class="screen">
+      <h2 id="player-turn"></h2>
+
+      <div class="question-challenge-wrapper">
+        <div class="box">
+          <h3>السؤال</h3>
+          <div id="question"></div>
+        </div>
+        <div class="box">
+          <h3>التحدي</h3>
+          <div id="challenge"></div>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button onclick="selectOption('question'); nextTurn();">اختر السؤال</button>
+        <button onclick="selectOption('challenge'); nextTurn();">اختر التحدي</button>
+        <button onclick="skipTurn()">لم يجب ولم يفعل</button>
+      </div>
+
+      <div id="scoreboard"></div>
+      <div id="emoji-container"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
